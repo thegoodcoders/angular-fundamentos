@@ -1,0 +1,16 @@
+{{ people | json }}
+
+<app-blue *ngIf="blueClicks < 10" [title]="blueTitle" (clickEvt)="onBlueClick($event)"></app-blue>
+<app-green *ngIf="greenClicks < 10" [title]="greenTitle" (clickEvt)="onGreenClicks($event)"></app-green>
+<app-red *ngIf="redClicks < 10" [title]="redTitle" (clickEvt)="redClicks = $event"></app-red>
+
+<p>💙: {{ blueClicks }}</p>
+<p>💚: {{ greenClicks }}</p>
+<p>🧡: {{ redClicks }}</p>
+
+<!-- <input type="text" [ngModel]="message" (ngModelChange)="message = $event" placeholder="Type a message"> -->
+<input type="text" [(ngModel)]="message" placeholder="Type a message">
+<br>
+<pre>{{ message }}</pre>
+
+<button (click)="reset()">RESET</button>

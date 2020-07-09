@@ -1,0 +1,10 @@
+p {
+    font-size: 3em;
+    line-height: 3em;
+    text-align: center;
+}
+
+::ng-deep .tooltip-red.mat-tooltip {
+    color: black;
+    background-color: lightcoral;
+}

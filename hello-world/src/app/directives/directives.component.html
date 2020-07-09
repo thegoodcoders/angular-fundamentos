@@ -1,0 +1,24 @@
+<header>
+    <input type="text" [(ngModel)]="text"
+    placeholder="Escribe algo..." (keyup.enter)="savePerson()">
+    <button type="button" (click)="removeAll()">BORRAR TODO</button>
+</header>
+
+<div>
+    <!-- <p *ngFor="let n of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]">{{ n }}</p> -->
+    <p *ngFor="let name of names; let i = index">{{ i + 1 }}: {{ name }}</p>
+</div>
+
+<p *ngIf="people.length > 0; else noPeople">
+    <span *ngFor="let person of people"
+        [ngClass]="{'long-name': person.name.length > 10}"
+        [style.background-color]="(person.name.length > 5) ? 'red' : null"
+        [ngStyle]="{'font-style': (person.name.length > 10) ? 'italic' : null }">
+        {{ person.icon }} - {{ person.id }} - {{ person.name }}
+        <hr>
+    </span>
+</p>
+
+<ng-template #noPeople>
+    <pre class="text-center">No has insertado ninguna Persona. Por favor, escribe un nombre y pulse ENTER</pre>
+</ng-template>

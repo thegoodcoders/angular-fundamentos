@@ -1,0 +1,4 @@
+<div class="box" (click)="onClick($event); sayHi('Alex'); isEven = clicks % 2 === 0">
+    <span (click)="sayHi('desde SPAN', $event)"> {{ title }} </span>
+    <pre> {{ (isEven) ? 'Par' : 'Impar' }} </pre>
+</div>
